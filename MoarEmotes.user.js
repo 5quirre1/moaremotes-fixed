@@ -55,7 +55,7 @@
         }
 
         image.src = link;
-        image.alt = "Emote";
+        image.alt = "Emote"; // for shits and giggles bro.
         image.style.cursor = "pointer";
         image.style.marginRight = "5px";
 

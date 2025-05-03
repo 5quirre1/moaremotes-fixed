@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    fetch('https://gist.githubusercontent.com/ozgq/82444ab3580961b1814c3239ecc78dd5/raw/818d6ad062571e7c23d9f6e443bd2ef02512a560/emotes.json')
+    fetch('https://raw.githubusercontent.com/ozgq/moaremotes/refs/heads/main/emotes.json') // those NEW EMOTES JUST DROPPED.
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Oops: ${response.status}`);

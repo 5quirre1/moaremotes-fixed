@@ -2,7 +2,7 @@
 // @name         MoarEmotes
 // @namespace    http://tampermonkey.net/
 // @version      2025-04-29
-// @description  Have
+// @description  Extended Emote List for Pikidiary
 // @author       zav
 // @match        https://pikidiary.lol/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=pikidiary.lol
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    fetch('https://raw.githubusercontent.com/ozgq/moaremotes/refs/heads/main/emotes.json') // those NEW EMOTES JUST DROPPED.
+    fetch('https://gist.githubusercontent.com/JustAGoodUsername/d0cfebb32023bec097b3e471a041905b/raw/fd54e0d07b69a8f5d4f7b8f33149d26f276c4344/emotes.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Oops: ${response.status}`);
@@ -44,18 +44,16 @@
         const image = document.createElement("img");
         let filenameWithoutExtension = "";
 
-        const match = link.match(/\/(\d+)\.gif$/); // Regex to capture only digits before .gif
+        const match = link.match(/\/([^/]+)\.(png|gif|jpeg)$/); // Regex to capture only digits before .gif/.png/.etc
 
         if (match && match[1]) {
             filenameWithoutExtension = match[1];
         } else {
-            console.warn("Could not extract filename using regex:", link);
-            const code = link.replace(/\D/g, "");
-            filenameWithoutExtension = code;
+            console.warn(`Could not extract filename using regex: ${link}.`);
         }
 
         image.src = link;
-        image.alt = "Emote"; // for shits and giggles bro.
+        image.alt = "Emote";
         image.style.cursor = "pointer";
         image.style.marginRight = "5px";
 

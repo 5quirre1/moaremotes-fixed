@@ -8,3 +8,5 @@ Emoji archive userscript for pikidiary.lol
 * Oh yeah also regex. Was not made by me. Because I didn't want to make it.
 # Contributing
 Don't. Please.
+
+*i'm not contributing btw* - 5quirre1
